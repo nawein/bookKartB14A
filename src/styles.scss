@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "../node_modules/@angular/material/theming";
+
+// add mixin only once in our entire application!
+@include mat-core;
+
+// Define the palettes for your theme
+
+$DeepPurple-light-theme-primary: mat-palette($mat-deep-purple);
+$DeepPurple-light-theme-accent: mat-palette($mat-amber);
+$DeepPurple-light-theme-warn: mat-palette($mat-red);
+
+$indigo-light-theme-primary: mat-palette($mat-indigo);
+$indigo-light-theme-accent: mat-palette($mat-pink);
+$indigo-light-theme-warn: mat-palette($mat-red);
+
+$pink-dark-theme-primary: mat-palette($mat-pink);
+$pink-dark-theme-accent: mat-palette($mat-blue-grey);
+$pink-dark-theme-warn: mat-palette($mat-red);
+
+$purple-dark-theme-primary: mat-palette($mat-purple);
+$purple-dark-theme-accent: mat-palette($mat-green);
+$purple-dark-theme-warn: mat-palette($mat-red);
+
+$DeepPurple-light-theme: mat-light-theme(
+  $DeepPurple-light-theme-primary,
+  $DeepPurple-light-theme-accent,
+  $DeepPurple-light-theme-warn
+);
+
+$indigo-light-theme: mat-light-theme(
+  $indigo-light-theme-primary,
+  $indigo-light-theme-accent,
+  $indigo-light-theme-warn
+);
+$pink-dark-theme: mat-dark-theme(
+  $pink-dark-theme-primary,
+  $pink-dark-theme-accent,
+  $pink-dark-theme-warn
+);
+$purple-dark-theme: mat-dark-theme(
+  $purple-dark-theme-primary,
+  $purple-dark-theme-accent,
+  $purple-dark-theme-warn
+);
+
+.DeepPurple-light-theme {
+  @include angular-material-theme($DeepPurple-light-theme);
+}
+.indigo-light-theme {
+  @include angular-material-theme($indigo-light-theme);
+}
+
+.pink-dark-theme {
+  @include angular-material-theme($pink-dark-theme);
+}
+
+.purple-dark-theme {
+  @include angular-material-theme($purple-dark-theme);
+}
